@@ -8,8 +8,8 @@ app = FastAPI()
 
 # Hugging Face API information
 API_URL = "https://api-inference.huggingface.co/models/cardiffnlp/twitter-roberta-base-sentiment-latest"
-headers = {"Authorization": f"Bearer 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"}
-
+API_KEY = os.getenv("HF_API_KEY")  # Fetches API key from environment
+headers = {"Authorization": f"Bearer {API_KEY}"}
 # Directory to save uploaded files (optional)
 UPLOAD_FOLDER = 'uploads'
 os.makedirs(UPLOAD_FOLDER, exist_ok=True)
